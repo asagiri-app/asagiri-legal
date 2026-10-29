@@ -3,33 +3,163 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>朝雾 · Asagiri Daily — 法律与支持</title>
+<title>朝雾 · Asagiri Daily — 私人记录 App</title>
+<meta name="description" content="朝雾（Asagiri Daily）是一份安静的私人记录：每天 10 秒记下早晨的状态，看清睡眠、饮酒、运动、情绪与长期变化。无账号，数据默认只在本机。">
 <style>
-  :root { color-scheme: light dark; }
-  body { margin:0; background:#FBF8F3; color:#2C2C2C; font:16px/1.75 -apple-system,BlinkMacSystemFont,"Hanken Grotesk","PingFang SC",sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:56px 24px 80px; }
-  h1 { font-family:"Libre Caslon Display",Georgia,serif; font-size:34px; font-weight:400; margin:0 0 8px; }
-  p.lead { color:#5E5650; margin:0 0 36px; }
-  a.card { display:block; border-top:1.5px solid #2C2C2C; padding:18px 2px; color:inherit; text-decoration:none; }
-  a.card:last-of-type { border-bottom:1px solid #D9D2C4; }
-  a.card strong { display:block; font-size:17px; font-weight:600; }
-  a.card span { color:#5E5650; font-size:14px; }
-  footer { margin-top:48px; color:#5E5650; font-size:13px; }
+  :root {
+    color-scheme: light dark;
+    --paper: #FBF8F3;
+    --center: #FFFDF9;
+    --ink: #2C2C2C;
+    --muted: #6B655C;
+    --hairline: #DDD5C7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: radial-gradient(circle at 50% 18%, var(--center), var(--paper) 62%);
+    color: var(--ink);
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Hanken Grotesk", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 24px 88px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "New York", Georgia, "Songti SC", "Noto Serif SC", serif;
+    font-size: clamp(44px, 9vw, 64px); font-weight: 400; line-height: 1.05;
+    margin: 0 0 12px; letter-spacing: .01em;
+  }
+  .tagline { font-size: 20px; margin: 0 0 14px; }
+  .lead { color: var(--muted); margin: 0 0 22px; max-width: 34em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-bottom: 36px; }
+  .actions a {
+    color: var(--ink); text-decoration: none;
+    border-bottom: 1.5px solid var(--ink); padding-bottom: 1px;
+    font-size: 14px;
+  }
+  .shots {
+    display: flex; gap: 14px; overflow-x: auto; padding: 4px 2px 18px;
+    scrollbar-width: none;
+  }
+  .shots::-webkit-scrollbar { display: none; }
+  .shots img {
+    width: 214px; flex: 0 0 auto; border-radius: 20px;
+    border: 1px solid var(--hairline);
+    box-shadow: 0 10px 30px rgba(44, 44, 44, .08);
+  }
+  section { margin-top: 44px; }
+  h2 {
+    font-family: "New York", Georgia, "Songti SC", "Noto Serif SC", serif;
+    font-size: 26px; font-weight: 400; margin: 0 0 6px;
+  }
+  .rule { border: 0; border-top: 1.5px solid var(--ink); margin: 18px 0 20px; }
+  ul { margin: 0; padding-left: 18px; }
+  li { margin: 7px 0; }
+  li strong { font-weight: 600; }
+  .muted { color: var(--muted); }
+  .price { display: flex; align-items: baseline; gap: 10px; margin: 14px 0 6px; }
+  .price .amount {
+    font-family: "New York", Georgia, "Songti SC", serif;
+    font-size: 40px; line-height: 1;
+  }
+  .price .note { color: var(--muted); font-size: 14px; }
+  .legal { display: grid; gap: 0; margin-top: 40px; border-top: 1.5px solid var(--ink); }
+  .legal a {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 12px; padding: 16px 2px; color: inherit; text-decoration: none;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .legal a span { color: var(--muted); font-size: 13px; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+  footer a { color: inherit; }
+  .en { margin-top: 34px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--muted); font-size: 14px; }
   @media (prefers-color-scheme: dark) {
-    body { background:#1C1C1E; color:#D1D1D6; }
-    p.lead, a.card span, footer { color:#9A9AA0; }
-    a.card { border-top-color:#D1D1D6; }
-    a.card:last-of-type { border-bottom-color:#3A3A3C; }
+    :root { --paper: #1C1C1E; --center: #232325; --ink: #D1D1D6; --muted: #9A9AA0; --hairline: #3A3A3C; }
+    .shots img { box-shadow: 0 10px 30px rgba(0, 0, 0, .35); }
   }
 </style>
 </head>
 <body>
 <main>
-  <h1>朝雾 · Asagiri Daily</h1>
-  <p class="lead">一个纯本地的私人身体记录 App。以下页面说明数据如何处理，以及如何联系开发者。</p>
-  <a class="card" href="privacy/"><strong>隐私政策 / Privacy Policy</strong><span>我们不收集、不上传任何记录。中英文对照。</span></a>
-  <a class="card" href="support/"><strong>支持 / Support</strong><span>常见问题、版本信息与联系方式。</span></a>
-  <footer>最后更新：2026-10-29 · 朝雾（Asagiri Daily）</footer>
+  <header>
+    <p class="eyebrow">Asagiri Daily</p>
+    <h1>朝雾</h1>
+    <p class="tagline">一份安静的私人记录</p>
+    <p class="lead">每天用 10 秒记下早晨的状态，看清睡眠、饮酒、运动、情绪与长期变化。没有账号，数据默认只保存在你的设备上。</p>
+    <div class="actions">
+      <a href="privacy/">隐私政策 · Privacy</a>
+      <a href="support/">支持 · Support</a>
+    </div>
+  </header>
+
+  <div class="shots">
+    <img src="assets/shot-today.jpg" alt="朝雾：今天的记录页" loading="lazy">
+    <img src="assets/shot-insights.jpg" alt="朝雾：洞察页" loading="lazy">
+    <img src="assets/shot-journal.jpg" alt="朝雾：回顾月历" loading="lazy">
+  </div>
+
+  <section>
+    <h2>每天一次，10 秒</h2>
+    <hr class="rule">
+    <ul>
+      <li><strong>记录晨间状态</strong>：晨勃 / 夜勃、0–4 的硬度自评，其他项目都可以跳过。</li>
+      <li><strong>可选补充</strong>：睡眠、饮酒、运动、情绪、用药与一句备注。</li>
+      <li><strong>自动保存</strong>：改完就走，不用找保存键。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>回顾与洞察</h2>
+    <hr class="rule">
+    <ul>
+      <li><strong>回顾</strong>：月历用色深表示分数，年视图把 12 个月排成色带；点任意一天可以补记或修改。</li>
+      <li><strong>洞察</strong>：7 天 / 30 天 / 90 天 / 一年，样本不够时会直接告诉你「还看不出规律」。</li>
+      <li><strong>只谈相关</strong>：所有对比都明确标注相关性，不做因果推断，也不提供医疗建议。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>完整版（一次买断）</h2>
+    <hr class="rule">
+    <ul>
+      <li><strong>完整洞察</strong>：90 天 / 一年趋势，以及睡眠、饮酒、运动、情绪、用药与分数的关系。</li>
+      <li><strong>iCloud 备份与恢复</strong>：每天自动备份一次，换手机时恢复；快照存在你自己的 iCloud 私有空间。</li>
+      <li><strong>PDF 记录报告</strong>：把一段时间的记录生成两页 PDF，打印或交给医生参考。</li>
+    </ul>
+    <div class="price"><span class="amount">$9.99</span><span class="note">一次性买断，没有订阅 · 中国区 ¥68</span></div>
+    <p class="muted">打卡、回顾、Excel 导出 / 导入、Face ID 解锁、配色与提醒都永久免费。</p>
+  </section>
+
+  <section>
+    <h2>隐私</h2>
+    <hr class="rule">
+    <ul>
+      <li>没有账号，不需要注册。</li>
+      <li>记录默认只在本机，不上传服务器；没有广告，没有第三方统计。</li>
+      <li>iCloud 备份是完整版的可选功能，只有你使用它时才会写入你自己的私有 iCloud，开发者无法读取。</li>
+    </ul>
+    <p class="muted">朝雾是自我观察工具，不是医疗器械，不提供诊断或治疗建议。如有持续不适，请咨询医生。</p>
+  </section>
+
+  <div class="legal">
+    <a href="privacy/"><strong>隐私政策 / Privacy Policy</strong><span>中英文</span></a>
+    <a href="support/"><strong>支持 / Support</strong><span>常见问题与联系方式</span></a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"><strong>用户协议 / Terms of Use</strong><span>Apple 标准 EULA</span></a>
+    <a href="mailto:krystal.11381@outlook.com"><strong>联系 / Contact</strong><span>krystal.11381@outlook.com</span></a>
+  </div>
+
+  <footer>
+    © 2026 朝雾 · Asagiri Daily · 最后更新 2026-10-29<br>
+    本页面用于 App Store 的隐私政策与支持链接。
+    <p class="en">
+      Asagiri Daily is a quiet, private wellness log for adults. Spend ten seconds each morning recording how you feel,
+      then see how sleep, alcohol, exercise and mood relate to your own long-term trends. No account, no ads — records stay
+      on your device unless you choose the optional iCloud backup in the Complete unlock.
+    </p>
+  </footer>
 </main>
 </body>
 </html>
