@@ -39,7 +39,7 @@
 
   <h2>2. 数据存储在哪里</h2>
   <p>记录使用 Apple 的 SwiftData 保存在你的设备本地。开发者没有服务器，也无法读取这些数据。卸载 App 或使用「更多 › 备份与恢复 › 删除全部记录」即可删除本机数据。</p>
-  <p>完整版提供<strong>可选的 iCloud 备份</strong>：开启并手动备份后，记录快照会保存在你自己的 iCloud 私有库中，由 Apple 加密存储。开发者无法访问这些快照；是否备份由你主动操作决定，未备份时数据只在本机。</p>
+  <p>完整版提供<strong>可选的 iCloud 备份</strong>：解锁后，App 会在每天首次打开且距上次备份超过 24 小时、有新的记录时自动备份一份；你也可以随时手动备份。快照保存在你自己的 iCloud 私有库中，由 Apple 加密存储，开发者无法访问。未解锁或不使用 iCloud 备份时，数据只在本机。</p>
 
   <h2>3. 设备权限</h2>
   <ul>
@@ -52,7 +52,7 @@
   <p>我们不共享、不出售、不转让你的任何数据，因为开发者根本接触不到这些数据。App 使用 Apple 提供的系统能力（TestFlight、App Store、系统分享面板等），这些服务由 Apple 按其隐私政策处理。</p>
 
   <h2>5. iCloud 备份</h2>
-  <p>iCloud 备份是完整版的可选功能，不会自动上传：只有你点击「立即备份」时才会把快照写入你自己的 iCloud 私有库，最多保留最近 7 份。开发者无法读取、导出或分享这些数据。你可以随时在 App 内删除本机记录，或在系统设置中管理 iCloud 数据。</p>
+  <p>iCloud 备份是完整版的可选功能，只有在你解锁并使用它时才会写入数据：每天首次打开 App 时（距上次备份超过 24 小时且有新记录）自动备份一次，你也可以手动备份；快照写入你自己的 iCloud 私有库，最多保留最近 7 份。恢复前会自动把当前数据备份一份。开发者无法读取、导出或分享这些数据。你可以随时在 App 内删除本机记录，或在系统设置中管理 iCloud 数据。</p>
 
   <h2>6. 儿童</h2>
   <p>朝雾面向成年用户，不面向 13 岁以下儿童，也不会有意收集儿童的信息。App 不提供任何账号或社交功能。</p>
@@ -75,7 +75,7 @@
   <p><strong>None.</strong> There is no account system, no sign-up, and no third-party analytics or advertising SDKs. Everything you enter in the app (morning condition, sleep, alcohol, exercise, mood, medication, notes, ejaculation events) is stored locally on your device.</p>
   <h3>2. Where data is stored</h3>
   <p>Records are stored with Apple's SwiftData on your device. The developer has no server and cannot read your data. You can delete local data in the app (More › Backup &amp; Restore › Delete all records) or by deleting the app.</p>
-  <p>The Complete unlock offers an <strong>optional iCloud backup</strong>: when you tap “Back up now”, a snapshot is saved to your own private iCloud database, encrypted by Apple. The developer cannot access these snapshots; nothing is uploaded unless you explicitly back up.</p>
+  <p>The Complete unlock offers an <strong>optional iCloud backup</strong>. Once unlocked, the app backs up automatically the first time you open it each day (if more than 24 hours have passed and something changed); you can also back up manually. Snapshots are saved to your own private iCloud database, encrypted by Apple, and the developer cannot access them. Without the unlock or without using iCloud backup, data stays on your device.</p>
   <h3>3. Device permissions</h3>
   <ul>
     <li><strong>Face ID / device passcode (optional)</strong>: used only to unlock the app locally. Biometrics are handled by iOS; the app cannot read your biometric data. Off by default.</li>
@@ -85,7 +85,7 @@
   <h3>4. Data sharing</h3>
   <p>We do not share, sell or transfer your data, because the developer never has access to it. The app uses Apple system services (TestFlight, the App Store, the system share sheet), which are governed by Apple's privacy policy. Optional iCloud backups are stored in the user's own private iCloud database and cannot be read by the developer.</p>
   <h3>5. Future features</h3>
-  <p>iCloud backup is an optional part of the Complete unlock. It never runs automatically: only when you tap “Back up now” is a snapshot written to your own private iCloud database, keeping the latest 7. The developer cannot read, export or share it. You can delete local records in the app, or manage iCloud data in the system Settings.</p>
+  <p>iCloud backup is an optional part of the Complete unlock and only writes data when you use it: the app backs up automatically the first time you open it each day (if more than 24 hours have passed and something changed), and you can also back up manually. Snapshots go to your own private iCloud database, keeping the latest 7, and the current data is backed up automatically before a restore. The developer cannot read, export or share it. You can delete local records in the app, or manage iCloud data in the system Settings.</p>
   <h3>6. Children</h3>
   <p>Asagiri Daily is intended for adults and is not directed to children under 13. The app has no account or social features and does not knowingly collect data from children.</p>
   <h3>7. Your choices</h3>
